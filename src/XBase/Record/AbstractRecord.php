@@ -144,7 +144,7 @@ class AbstractRecord implements RecordInterface
         $data = trim($this->choppedData[$columnName]);
 
         if ($this->table->getConvertFrom()) {
-            $data = iconv($this->table->getConvertFrom(), 'utf-8', $data);
+            $data = iconv($this->table->getConvertFrom(), 'utf-8//IGNORE', $data);
         }
 
         if (!isset($data[0]) || 0 === ord($data[0])) {

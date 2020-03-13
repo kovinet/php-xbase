@@ -43,7 +43,7 @@ class FoxproMemo extends AbstractMemo
 
         $type = $this->guessDataType($result);
         if ($this->convertFrom) {
-            $result = iconv($this->convertFrom, 'utf-8', $result);
+            $result = iconv($this->convertFrom, 'utf-8//IGNORE', $result);
         }
 
         return new MemoObject($type, $result);
